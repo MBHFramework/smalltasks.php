@@ -24,7 +24,7 @@ class ProcessorNullTask extends AbstractProcessorTask
     }
 
     public function add(AbstractProcessorTask $processorTask){
-        $this->previous->setSucessor($processorTask);
+        $this->previous->setSuccessor($processorTask);
         return $this;
     }
 }

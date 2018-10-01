@@ -7,7 +7,7 @@
  * @author Ulises Jeremias Cornejo Fandos <ulisescf.24@gmail.com>
  * @author Federico Ramon Gasquez <federicogasquez@gmail.com>
  */
-abstract class ProcessorNullTask extends AbstractProcessorTask 
+class ProcessorNullTask extends AbstractProcessorTask 
 {
 
     private $previous;

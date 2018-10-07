@@ -12,7 +12,7 @@ abstract class ProcessorTask extends AbstractProcessorTask
     private $successor;
 
     public function __construct() {
-        $this->getSuccessor(new ProcessorNullTask);
+        $this->setSuccessor(new ProcessorNullTask);
     }
     
     /*
@@ -21,7 +21,11 @@ abstract class ProcessorTask extends AbstractProcessorTask
     public function handle($elem) {
         $result = $this->run($elem);
 
-        return $this->nextFor($elem).handle($result);
+        return $this->nextFor($elem)->handle($result);
+    }
+
+    public function add(AbstractProcessorTask $processorTask) {
+        return $this->getSuccessor()->add($processorTask);
     }
 
     private function nextFor($elem) {
@@ -29,6 +33,9 @@ abstract class ProcessorTask extends AbstractProcessorTask
     }
 
     public function getSuccessor() {
+        if (!$this->successor instanceof AbstractProcessorTask)
+            $this->setSuccessor(new ProcessorNullTask);
+
         return $this->successor;
     }
 

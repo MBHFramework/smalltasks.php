@@ -12,7 +12,7 @@ class ProcessorNullTask extends AbstractProcessorTask
 
     private $previous;
 
-    public function __contruct(AbstractProcessorTask $processorTask){
+    public function __contruct(AbstractProcessorTask $processorTask) {
         $this->previous = $processorTask;
     }
 
@@ -23,8 +23,9 @@ class ProcessorNullTask extends AbstractProcessorTask
         return $elem;
     }
 
-    public function add(AbstractProcessorTask $processorTask){
+    public function add(AbstractProcessorTask $processorTask) {
         $this->previous->setSuccessor($processorTask);
+
         return $this;
     }
 }

@@ -3,9 +3,6 @@
 /**
  * AbstractProcessorTask
  * 
- * @package smalltasks
- * @author Ulises Jeremias Cornejo Fandos <ulisescf.24@gmail.com>
- * @author Federico Ramon Gasquez <federicogasquez@gmail.com>
  */
 class ProcessorNullTask extends AbstractProcessorTask 
 {

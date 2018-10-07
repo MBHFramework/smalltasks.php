@@ -25,7 +25,7 @@ abstract class ProcessorTask extends AbstractProcessorTask
         return $this->getSuccessor()->add($processorTask);
     }
 
-    private function nextFor($elem) {
+    private function nextFor($elem): AbstractProcessorTask {
         return $this->getSuccessor();
     }
 
